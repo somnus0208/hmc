@@ -11,25 +11,25 @@
 class HuffmanStream
 {
 public:
-	enum class CompressionMode
-	{
-		Compress,
-		Decompress
-	};
+    enum class CompressionMode
+    {
+        Compress,
+        Decompress
+    };
 public:
-	HuffmanStream(std::ostream* outputStream,CompressionMode mode);
+    HuffmanStream(std::ostream* outputStream,CompressionMode mode);
 public:
-	bool operator << (std::ifstream& inputStream);
-	~HuffmanStream();
+    bool operator << (std::ifstream& inputStream);
+    ~HuffmanStream();
 private:
-	HuffmanStream();
-	std::vector<bool> GetCryptedCode(char c);
-	
+    HuffmanStream();
+    std::vector<bool> GetCryptedCode(char c);
+    
 private:
-	CompressionMode _mode;
-	std::ostream* _sourceStream;
-	HuffmanTree* _tree;
-	std::map<char,std::vector<bool>> _codeMap;
+    CompressionMode _mode;
+    std::ostream* _sourceStream;
+    HuffmanTree* _tree;
+    std::map<char,std::vector<bool>> _codeMap;
 };
 
 #endif //_HUFFMANOUTPUTSTREAM_

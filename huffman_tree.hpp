@@ -13,32 +13,32 @@ using std::istream;
 
 class HuffmanTree
 {
-	friend ostream& operator << (ostream &os,HuffmanTree* const tree);
-	friend istream& operator >> (istream &os,HuffmanTree* const tree);
-	friend class HuffmanStream;
+    friend ostream& operator << (ostream &os,HuffmanTree* const tree);
+    friend istream& operator >> (istream &os,HuffmanTree* const tree);
+    friend class HuffmanStream;
 public:
-	static HuffmanTree* Parse(std::istream& input); 
+    static HuffmanTree* Parse(std::istream& input); 
 
 public:
-	HuffmanTreeItem* GetRootItem() const;
-	HuffmanTreeItem* GetTerminalItem(char c) const;
+    HuffmanTreeItem* GetRootItem() const;
+    HuffmanTreeItem* GetTerminalItem(char c) const;
 
 public:
 
 
 private:
-	HuffmanTree();
-	HuffmanTree(HuffmanTree& binaryTree);
-	~HuffmanTree();
+    HuffmanTree();
+    HuffmanTree(HuffmanTree& binaryTree);
+    ~HuffmanTree();
 private:
 
-	void MakeChildItem();
+    void MakeChildItem();
 
 private:
-	HuffmanTreeItem* _rootNode;
-	vector<HuffmanTreeItem*> _terminalNodes;
-	vector<HuffmanTreeItem*> _innerNodes;
-	
+    HuffmanTreeItem* _rootNode;
+    vector<HuffmanTreeItem*> _terminalNodes;
+    vector<HuffmanTreeItem*> _innerNodes;
+    
 
 };
 
