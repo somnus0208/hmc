@@ -23,7 +23,7 @@ public:
     ~HuffmanStream();
 private:
     HuffmanStream();
-    std::vector<bool> GetCryptedCode(char c);
+    std::vector<bool> GetEncryptedCode(char c);
     
 private:
     CompressionMode _mode;

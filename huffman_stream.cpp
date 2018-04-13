@@ -249,7 +249,7 @@ bool HuffmanStream::operator<<(ifstream& inputStream )
     return false;
 }
 
-std::vector<bool> HuffmanStream::GetCryptedCode( char c )
+std::vector<bool> HuffmanStream::GetEncryptedCode( char c )
 {
     if (_codeMap.find(c) != _codeMap.end()) return _codeMap[c];
     forward_list<bool> list;
