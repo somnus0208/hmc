@@ -1,4 +1,5 @@
 WORKDIR = $(pwd)
+BINDIR  = /usr/bin/
 PROGRAM = hmc
 OBJS = main.o huffman_stream.o huffman_tree.o huffman_tree_item.o
 CXX = g++
@@ -21,6 +22,12 @@ huffman_tree.o: huffman_tree.cpp
 huffman_tree_item.o: huffman_tree_item.cpp
 	$(CXX) $(CXXFLAGS) huffman_tree_item.cpp
 
+.PHONY: install
+install: all
+	@install -m 557 ./$(PROGRAM) $(BINDIR)
+	@echo "successfully install hmc"
+
 .PHONY: clean
 clean:
 	-rm $(OBJS) $(PROGRAM)
+	@echo "successfully delete all built files"
